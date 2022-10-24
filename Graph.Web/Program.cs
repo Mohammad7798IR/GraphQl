@@ -1,4 +1,6 @@
+using Graph.Web;
 using Graph.Web.Context;
+using Graph.Web.Repositories.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,11 +13,26 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 builder.Services.AddDbContextPool<GraphDbContext>(options =>
 {
     options.UseSqlServer(configuration.GetSection("ConnectionStrings")["DefaultConnectionStrings"]);
 });
+
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<Query>()
+    .RegisterDbContext<GraphDbContext>(DbContextKind.Resolver);
+//.AddType<UserType>()
+//.AddType<PostType>();
+
+//builder.Services
+//    .AddSingleton<UserRepository>();
+
+//builder.Services
+//    .AddScoped<IUserRepository, UserRepository>();
+
+//builder.Services
+//    .AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
@@ -25,6 +42,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapGraphQL();
 
 app.UseAuthorization();
 
