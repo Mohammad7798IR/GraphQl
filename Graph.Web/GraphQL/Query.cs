@@ -1,5 +1,6 @@
 ﻿using Graph.Web.Context;
 using Graph.Web.Model;
+using HotChocolate;
 
 namespace Graph.Web
 {
@@ -7,10 +8,13 @@ namespace Graph.Web
         {
                 
 
-                public IQueryable<User> Users(GraphDbContext graphDbContext) =>
+                public IQueryable<User> Users([Service]GraphDbContext graphDbContext) =>
                     graphDbContext.Users;
+                //public IQueryable<Like> Likes([Service] GraphDbContext graphDbContext) =>
+                //    graphDbContext.Likes;
 
-                public IQueryable<Post> GetPosts([Service] GraphDbContext context) =>
-                        context.Posts;
+
+                //public IQueryable<Post> GetPosts([Service] GraphDbContext context) =>
+                //        context.Posts;
         }
 }

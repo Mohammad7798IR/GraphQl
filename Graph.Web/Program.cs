@@ -1,5 +1,6 @@
 using Graph.Web;
 using Graph.Web.Context;
+using Graph.Web.Model.Types;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,10 +20,12 @@ builder.Services.AddDbContext<GraphDbContext>(options =>
 
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<Query>();
-//.RegisterDbContext<GraphDbContext>(DbContextKind.Resolver);
-//.AddType<UserType>()
-//.AddType<PostType>();
+    .AddQueryType<Query>()
+    .RegisterDbContext<GraphDbContext>()
+    .AddType<UserType>()
+    .AddType<LikeType>();
+    //.AddType<PostType>()
+    //.AddType<CommentType>();
 
 //builder.Services
 //    .AddSingleton<UserRepository>();
@@ -43,11 +46,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
-//app.MapGraphQL();
-app.UseEndpoints(endpoint =>
-{
-        endpoint.MapGraphQL();
-});
+app.MapGraphQL("/graphql");
+//app.UseEndpoints(endpoint =>
+//{
+//        endpoint.MapGraphQL("/graphql");
+//});
 //app.UseAuthorization();
 
 //app.MapControllers();
