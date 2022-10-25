@@ -13,5 +13,7 @@
                 public User? User { get; set; }
 
                 public ICollection<Like>? PostLikes { get; set; }
+                public ICollection<Comment>? PostComments { get; set; }
+
         }
 }

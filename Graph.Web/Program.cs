@@ -12,15 +12,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContextPool<GraphDbContext>(options =>
+builder.Services.AddDbContext<GraphDbContext>(options =>
 {
-    options.UseSqlServer(configuration.GetSection("ConnectionStrings")["DefaultConnectionStrings"]);
+        options.UseSqlServer(configuration.GetSection("ConnectionStrings")["DefaultConnectionStrings"]);
 });
 
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<Query>()
-    .RegisterDbContext<GraphDbContext>(DbContextKind.Resolver);
+    .AddQueryType<Query>();
+//.RegisterDbContext<GraphDbContext>(DbContextKind.Resolver);
 //.AddType<UserType>()
 //.AddType<PostType>();
 
@@ -38,14 +38,18 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+        app.UseSwagger();
+        app.UseSwaggerUI();
 }
 
-app.MapGraphQL();
+app.UseRouting();
+//app.MapGraphQL();
+app.UseEndpoints(endpoint =>
+{
+        endpoint.MapGraphQL();
+});
+//app.UseAuthorization();
 
-app.UseAuthorization();
-
-app.MapControllers();
+//app.MapControllers();
 
 app.Run();
