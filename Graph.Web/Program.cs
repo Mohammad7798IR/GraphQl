@@ -1,6 +1,5 @@
 using Graph.Web;
 using Graph.Web.Context;
-using Graph.Web.Repositories.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
