@@ -5,7 +5,7 @@ namespace Graph.Web.Model;
 public class BaseEntity
 {
     [Key]
-    public string? Id { get; set; }
+    public string? Id { get; set; } = Guid.NewGuid().ToString();        
 
     public DateTime CreationDate { get; set; } = DateTime.Now;
 
