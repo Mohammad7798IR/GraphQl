@@ -170,3 +170,4 @@ C:\Users\Amir.Ekramian\Source\Repos\GraphQl\Graph.Web\obj\Debug\net6.0\refint\Gr
 C:\Users\Amir.Ekramian\Source\Repos\GraphQl\Graph.Web\obj\Debug\net6.0\Graph.Web.pdb
 C:\Users\Amir.Ekramian\Source\Repos\GraphQl\Graph.Web\obj\Debug\net6.0\Graph.Web.genruntimeconfig.cache
 C:\Users\Amir.Ekramian\Source\Repos\GraphQl\Graph.Web\obj\Debug\net6.0\ref\Graph.Web.dll
+C:\Users\Amir.Ekramian\Source\Repos\GraphQl\Graph.Web\bin\Debug\net6.0\GraphQL.Server.Ui.Voyager.dll

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cqSHzKbjjvpEM1Yaj+VnQwTERDON74NPB8GhC3NSTKYiKSRucUD06Oe9uratuf3zReWWuPX33rKIZTb2gscjDQ==",
+  "dgSpecHash": "KEoXWwPGmTM3m7j9DZ4pbw7fXhPbFWf6vDUkIAmdFumHAZngNgDmHieN1M8gnTcSuN8VET6b+lWwlzn+K5dubg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Amir.Ekramian\\Source\\Repos\\GraphQl\\Graph.Web\\Graph.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Amir.Ekramian\\.nuget\\packages\\graphql.server.ui.voyager\\7.1.1\\graphql.server.ui.voyager.7.1.1.nupkg.sha512",
     "C:\\Users\\Amir.Ekramian\\.nuget\\packages\\greendonut\\12.15.0\\greendonut.12.15.0.nupkg.sha512",
     "C:\\Users\\Amir.Ekramian\\.nuget\\packages\\hotchocolate\\12.15.0\\hotchocolate.12.15.0.nupkg.sha512",
     "C:\\Users\\Amir.Ekramian\\.nuget\\packages\\hotchocolate.abstractions\\12.15.0\\hotchocolate.abstractions.12.15.0.nupkg.sha512",
