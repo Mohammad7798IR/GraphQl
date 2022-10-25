@@ -3242,19 +3242,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mohammadali.Ebrahimz\\.nuget\\packages\\": {}
+    "C:\\Users\\Amir.Ekramian\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mohammadali.Ebrahimz\\source\\repos\\Graph.Sln\\Graph.Web\\Graph.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Amir.Ekramian\\Source\\Repos\\GraphQl\\Graph.Web\\Graph.Web.csproj",
       "projectName": "Graph.Web",
-      "projectPath": "C:\\Users\\Mohammadali.Ebrahimz\\source\\repos\\Graph.Sln\\Graph.Web\\Graph.Web.csproj",
-      "packagesPath": "C:\\Users\\Mohammadali.Ebrahimz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mohammadali.Ebrahimz\\source\\repos\\Graph.Sln\\Graph.Web\\obj\\",
+      "projectPath": "C:\\Users\\Amir.Ekramian\\Source\\Repos\\GraphQl\\Graph.Web\\Graph.Web.csproj",
+      "packagesPath": "C:\\Users\\Amir.Ekramian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amir.Ekramian\\Source\\Repos\\GraphQl\\Graph.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mohammadali.Ebrahimz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Amir.Ekramian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3262,8 +3262,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.samansalamat.ir/nuget": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.samansalamat.ir/nuget": {}
       },
       "frameworks": {
         "net6.0": {
