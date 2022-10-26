@@ -7,9 +7,15 @@ namespace Graph.Web
         public class Query
         {
                 
-
-                public IQueryable<User> Users([Service]GraphDbContext graphDbContext) =>
+                [UseDbContext(typeof(GraphDbContext))]
+                [UseProjection]
+                public IQueryable<User> Users([ScopedService]GraphDbContext graphDbContext) =>
                     graphDbContext.Users;
+
+                [UseDbContext(typeof(GraphDbContext))]
+                [UseProjection]
+                public IQueryable<Post> Posts([ScopedService] GraphDbContext graphDbContext) =>
+                    graphDbContext.Posts;
                 //public IQueryable<Like> Likes([Service] GraphDbContext graphDbContext) =>
                 //    graphDbContext.Likes;
 

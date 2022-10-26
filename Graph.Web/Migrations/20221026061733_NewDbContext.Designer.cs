@@ -3,6 +3,7 @@ using Graph.Web.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Graph.Web.Migrations
 {
     [DbContext(typeof(GraphDbContext))]
-    partial class GraphDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221026061733_NewDbContext")]
+    partial class NewDbContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,8 +32,8 @@ namespace Graph.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("LikeCount")
-                        .HasColumnType("bigint");
+                    b.Property<decimal>("LikeCount")
+                        .HasColumnType("decimal(20,0)");
 
                     b.Property<string>("ModificationDate")
                         .HasColumnType("nvarchar(max)");
@@ -53,7 +55,7 @@ namespace Graph.Web.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("comments");
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Graph.Web.Model.Like", b =>
@@ -97,8 +99,8 @@ namespace Graph.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("LikeCount")
-                        .HasColumnType("bigint");
+                    b.Property<decimal>("LikeCount")
+                        .HasColumnType("decimal(20,0)");
 
                     b.Property<string>("ModificationDate")
                         .HasColumnType("nvarchar(max)");
@@ -146,11 +148,11 @@ namespace Graph.Web.Migrations
                         .HasForeignKey("ParentId");
 
                     b.HasOne("Graph.Web.Model.Post", "Post")
-                        .WithMany("comments")
+                        .WithMany("PostComments")
                         .HasForeignKey("PostId");
 
                     b.HasOne("Graph.Web.Model.User", "User")
-                        .WithMany("comments")
+                        .WithMany("Comments")
                         .HasForeignKey("UserId");
 
                     b.Navigation("Parent");
@@ -197,18 +199,18 @@ namespace Graph.Web.Migrations
 
             modelBuilder.Entity("Graph.Web.Model.Post", b =>
                 {
-                    b.Navigation("PostLikes");
+                    b.Navigation("PostComments");
 
-                    b.Navigation("comments");
+                    b.Navigation("PostLikes");
                 });
 
             modelBuilder.Entity("Graph.Web.Model.User", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Likes");
 
                     b.Navigation("Posts");
-
-                    b.Navigation("comments");
                 });
 #pragma warning restore 612, 618
         }

@@ -3,6 +3,7 @@ using Graph.Web.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Graph.Web.Migrations
 {
     [DbContext(typeof(GraphDbContext))]
-    partial class GraphDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221026070142_AddCommentAndLikes")]
+    partial class AddCommentAndLikes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,11 +148,11 @@ namespace Graph.Web.Migrations
                         .HasForeignKey("ParentId");
 
                     b.HasOne("Graph.Web.Model.Post", "Post")
-                        .WithMany("comments")
+                        .WithMany()
                         .HasForeignKey("PostId");
 
                     b.HasOne("Graph.Web.Model.User", "User")
-                        .WithMany("comments")
+                        .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("Parent");
@@ -167,11 +169,11 @@ namespace Graph.Web.Migrations
                         .HasForeignKey("CommentId");
 
                     b.HasOne("Graph.Web.Model.Post", "Post")
-                        .WithMany("PostLikes")
+                        .WithMany()
                         .HasForeignKey("PostId");
 
                     b.HasOne("Graph.Web.Model.User", "User")
-                        .WithMany("Likes")
+                        .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("Comment");
@@ -195,20 +197,9 @@ namespace Graph.Web.Migrations
                     b.Navigation("CommentLikes");
                 });
 
-            modelBuilder.Entity("Graph.Web.Model.Post", b =>
-                {
-                    b.Navigation("PostLikes");
-
-                    b.Navigation("comments");
-                });
-
             modelBuilder.Entity("Graph.Web.Model.User", b =>
                 {
-                    b.Navigation("Likes");
-
                     b.Navigation("Posts");
-
-                    b.Navigation("comments");
                 });
 #pragma warning restore 612, 618
         }

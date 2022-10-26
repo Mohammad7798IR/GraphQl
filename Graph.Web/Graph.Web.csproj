@@ -8,9 +8,13 @@
 
 	<ItemGroup>
 		<Compile Remove="Controllers\**" />
+		<Compile Remove="Model\Types\**" />
 		<Content Remove="Controllers\**" />
+		<Content Remove="Model\Types\**" />
 		<EmbeddedResource Remove="Controllers\**" />
+		<EmbeddedResource Remove="Model\Types\**" />
 		<None Remove="Controllers\**" />
+		<None Remove="Model\Types\**" />
 	</ItemGroup>
 
 	<ItemGroup>
