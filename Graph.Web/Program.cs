@@ -18,7 +18,9 @@ builder.Services.AddPooledDbContextFactory<GraphDbContext>(options =>
 builder.Services
     .AddGraphQLServer()
     .AddProjections()
-    .AddQueryType<Query>();
+    .AddQueryType<Query>()
+    .AddSorting()
+    .AddFiltering();
     //.RegisterDbContext<GraphDbContext>();
     //.AddType<UserType>()
     //.AddType<LikeType>();
