@@ -18,6 +18,7 @@ namespace Graph.Web
                 [UseProjection]
                 [UseSorting]
                 [UseFiltering]
+
                 public IQueryable<Post> Posts([ScopedService] GraphDbContext graphDbContext) =>
                     graphDbContext.Posts;
 
@@ -25,6 +26,7 @@ namespace Graph.Web
                 [UseProjection]
                 [UseSorting]
                 [UseFiltering]
+
                 public IQueryable<Comment> comments([ScopedService] GraphDbContext graphDbContext) =>
                     graphDbContext.comments;
                 //public IQueryable<Like> Likes([Service] GraphDbContext graphDbContext) =>

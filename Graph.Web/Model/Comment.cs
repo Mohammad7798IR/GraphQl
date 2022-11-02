@@ -4,6 +4,8 @@
         {
                 public String? UserId { get; set; }
 
+                public string? Text { get; set; }
+
                 public User? User { get; set; }
 
                 public string? PostId { get; set; }

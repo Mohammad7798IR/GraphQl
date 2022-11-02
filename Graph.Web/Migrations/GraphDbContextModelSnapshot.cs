@@ -42,6 +42,9 @@ namespace Graph.Web.Migrations
                     b.Property<string>("PostId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
